@@ -1,8 +1,8 @@
 package org.example.ej1_mnms
 
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{col, count, desc}
+import org.example.sparkSessionFactory.SparkSessionFactory
 
 object Ej1_MnMs {
 
@@ -10,11 +10,8 @@ object Ej1_MnMs {
   // Función que encapsula toda la lógica del programa
   def run(mnmFile: String): Unit = {
     // Creating SparkSession
-    val spark = SparkSession
-      .builder()
-      .appName("MnMCounter")
-      .master("local")
-      .getOrCreate()
+
+    val spark = SparkSessionFactory.createSparkSession("MnMCounter")
 
     spark.sparkContext.setLogLevel("ERROR")
 
