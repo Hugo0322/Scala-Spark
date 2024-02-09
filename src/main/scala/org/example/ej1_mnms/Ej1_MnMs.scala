@@ -13,8 +13,6 @@ object Ej1_MnMs {
 
     val spark = SparkSessionFactory.createSparkSession("MnMCounter")
 
-    spark.sparkContext.setLogLevel("ERROR")
-
     // Allowing spark to printout all more than 20 lines at once
     // spark.conf.set("spark.sql.repl.eagerEval.enabled", true) // No me funciona, no se si debería o lo he mirado mal en google
 

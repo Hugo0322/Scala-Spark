@@ -1,7 +1,7 @@
 package org.example
 
 
-import org.example.chapter3.DefiningSchema
+import org.example.chapter3.{CommonDataFrameOperations, DefiningSchema}
 import org.example.ej1_mnms.Ej1_MnMs
 
 object Main {
@@ -19,9 +19,13 @@ object Main {
           Ej1_MnMs.run(mnmFileManuallyInjecetd)
      */
 
-    // Chapter3 DefiningSchema execution code
-    val injectedFile = "src/main/resources/blogs.json"
-    DefiningSchema.run(injectedFile)
+    /*
+      // Chapter3 DefiningSchema execution code
+      val injectedFile = "src/main/resources/blogs.json"
+      DefiningSchema.run(injectedFile)
+     */
 
+    val injectedFile = "src/main/resources/sf-fire-calls.csv"
+    CommonDataFrameOperations.run(injectedFile)
   }
 }

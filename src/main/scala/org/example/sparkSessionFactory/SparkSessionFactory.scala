@@ -11,6 +11,8 @@ object SparkSessionFactory {
       .master("local")
       .getOrCreate()
 
+      spark.sparkContext.setLogLevel("ERROR")
+
       spark
   }
 }
