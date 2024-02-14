@@ -1,8 +1,8 @@
 package org.example
 
 
-import org.example.chapter3.{CommonDataFrameOperations, DefiningSchema}
-import org.example.ej1_mnms.Ej1_MnMs
+import org.example.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
+import org.example.chapter2.Ej1_MnMs
 
 object Main {
   def main(args:Array[String]): Unit = {
@@ -13,19 +13,25 @@ object Main {
     //}
 
     /*
-          // Ej1_MnMs execution code
-          // val mnmFile = args(0) // Esta línea sirve para pasarle el archivo directamente por consola
-          val mnmFileManuallyInjecetd = "src/main/resources/mnm_dataset.csv"
-          Ej1_MnMs.run(mnmFileManuallyInjecetd)
+      // Chapter2 Ej1_MnMs execution code
+      val mnmDataSet_File = "src/main/resources/mnm_dataset.csv"
+      Ej1_MnMs.run(mnmDataSet_File)
      */
 
     /*
-      // Chapter3 DefiningSchema execution code
-      val injectedFile = "src/main/resources/blogs.json"
-      DefiningSchema.run(injectedFile)
+      // Chapter3 Ej1_DefiningSchema execution code
+      val blogs_File = "src/main/resources/blogs.json"
+      DefiningSchema.run(blogs_File)
      */
 
-    val injectedFile = "src/main/resources/sf-fire-calls.csv"
-    CommonDataFrameOperations.run(injectedFile)
+    /*
+      // Chapter3 Ej2_FireCallsCommonDataFrameOperations execution code
+      val sfFireCalls_File = "src/main/resources/sf-fire-calls.csv"
+      Ej2_FireCalls_CommonDataFrameOperations.run(sfFireCalls_File)
+     */
+
+    // Chapter3 Ej3_DataSet_API execution code
+    val scalaCaseClasses_File = "src/main/resources/iot_devices.json"
+    Ej3_DataSet_API.run(scalaCaseClasses_File)
   }
 }
