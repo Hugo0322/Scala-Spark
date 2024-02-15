@@ -1,8 +1,8 @@
 package org.example.chapter3
 
 import org.apache.spark.sql.Row
-import org.example.caseClasses.{DeviceIoTData, DeviceTempByCountry}
-import org.example.sparkSessionFactory.SparkSessionFactory
+import org.example.commonlyUsedSharedFolder.sparkSessionFactory.SparkSessionFactory
+import org.example.commonlyUsedSharedFolder.sparkSessionFactory.caseClasses.{DeviceIoTData, DeviceTempByCountry}
 
 object Ej3_DataSet_API {
 

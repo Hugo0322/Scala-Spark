@@ -2,7 +2,7 @@ package org.example.chapter2
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.functions.{col, count, desc}
-import org.example.sparkSessionFactory.SparkSessionFactory
+import org.example.commonlyUsedSharedFolder.sparkSessionFactory.SparkSessionFactory
 
 object Ej1_MnMs {
 

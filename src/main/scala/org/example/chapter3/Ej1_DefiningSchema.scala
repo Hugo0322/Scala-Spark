@@ -3,7 +3,7 @@ package org.example.chapter3
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.functions.{col, concat, expr}
 import org.apache.spark.sql.types._
-import org.example.sparkSessionFactory.SparkSessionFactory
+import org.example.commonlyUsedSharedFolder.sparkSessionFactory.SparkSessionFactory
 
 object Ej1_DefiningSchema {
 

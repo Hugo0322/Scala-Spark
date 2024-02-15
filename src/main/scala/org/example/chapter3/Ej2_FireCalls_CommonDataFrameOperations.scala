@@ -1,9 +1,9 @@
 package org.example.chapter3
 
 import org.apache.spark.sql.types._
-import org.example.sparkSessionFactory.SparkSessionFactory
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{functions => F}
+import org.example.commonlyUsedSharedFolder.sparkSessionFactory.SparkSessionFactory
 
 
 object Ej2_FireCalls_CommonDataFrameOperations {

@@ -3,6 +3,7 @@ package org.example
 
 import org.example.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
 import org.example.chapter2.Ej1_MnMs
+import org.example.chapter4.Ej1_BasicSQLQueryExamples
 
 object Main {
   def main(args:Array[String]): Unit = {
@@ -30,8 +31,15 @@ object Main {
       Ej2_FireCalls_CommonDataFrameOperations.run(sfFireCalls_File)
      */
 
-    // Chapter3 Ej3_DataSet_API execution code
-    val scalaCaseClasses_File = "src/main/resources/iot_devices.json"
-    Ej3_DataSet_API.run(scalaCaseClasses_File)
+    /*
+      // Chapter3 Ej3_DataSet_API execution code
+      val scalaCaseClasses_File = "src/main/resources/iot_devices.json"
+      Ej3_DataSet_API.run(scalaCaseClasses_File)
+     */
+
+    // Chapter4  execution code
+    val basicSQLQueryExamples = "src/main/resources/departuredelays.csv"
+    Ej1_BasicSQLQueryExamples.run(basicSQLQueryExamples)
+
   }
 }
