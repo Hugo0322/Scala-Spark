@@ -3,7 +3,7 @@ package org.example
 
 import org.example.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
 import org.example.chapter2.Ej1_MnMs
-import org.example.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader}
+import org.example.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
 
 object Main {
   def main(args:Array[String]): Unit = {
@@ -49,10 +49,15 @@ object Main {
       Ej2_CreatingSQLDatabasesAndTables.run(creatingSQLDatabasesAndTables)
      */
 
-    // Chapter4 DataFrame Readers execution code
-    val dataFrameReader = "src/main/resources/in/sumaryData/"
-    Ej3_DataFrameReader.run(dataFrameReader)
+    /*
+      // Chapter4 DataFrame Readers execution code
+      val dataFrameReader = "src/main/resources/in/sumaryData/"
+      Ej3_DataFrameReader.run(dataFrameReader)
+     */
 
+    // Chapter4 Images execution code
+    val imagesFile = "src/main/resources/in/images/"
+    Ej4_Images.run(imagesFile)
 
   }
 }
