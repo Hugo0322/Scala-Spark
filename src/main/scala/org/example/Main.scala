@@ -4,6 +4,7 @@ package org.example
 import org.example.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
 import org.example.chapter2.Ej1_MnMs
 import org.example.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
+import org.example.chapter5.{Ej1_UserDefinedFunctions, Ej2_PostgreSQL, Ej3_MySQL, Ej5_MySQLServer, Ej6_CommonDFandSparkSQLOperations}
 
 object Main {
   def main(args:Array[String]): Unit = {
@@ -55,9 +56,29 @@ object Main {
       Ej3_DataFrameReader.run(dataFrameReader)
      */
 
-    // Chapter4 Images execution code
-    val imagesFile = "src/main/resources/in/images/"
-    Ej4_Images.run(imagesFile)
+    /*
+      // Chapter4 Images execution code
+      val imagesFile = "src/main/resources/in/images/"
+      Ej4_Images.run(imagesFile)
+     */
+
+    /*
+      // Chapter5 User-Defined Functions execution code
+      Ej1_UserDefinedFunctions.run()
+      // Chapter5 PostgreSQL execution code
+      Ej2_PostgreSQL.run()
+      // Chapter5 MySQL execution conde
+      Ej3_MySQL.run()
+      // Chapter5 Azure Cosmos DB execution code
+      Ej4_AzureCosmosDB.run()
+      // Chapter5 My SQL Server execution code
+      Ej5_MySQLServer.run()
+     */
+
+    // Chapter5 Common DataFrame and SparkSQL Operations execution code
+    val departureDelaysCSVfile = "src/main/resources/in/departuredelays.csv"
+    val airportCodesNA = "src/main/resources/in/airport-codes-na.txt"
+    Ej6_CommonDFandSparkSQLOperations.run(departureDelaysCSVfile, airportCodesNA)
 
   }
 }
