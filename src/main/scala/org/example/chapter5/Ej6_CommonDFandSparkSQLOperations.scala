@@ -52,11 +52,38 @@ object Ej6_CommonDFandSparkSQLOperations {
     //).select("City", "State", "date", "delay", "distance", "destination").show()
     // Does not work // No reconoce la columna air.IATA y no he conseguido hacer que reconozca ninguna columna de la tabla airports renamed as air
 
-    // Windowing
-    spark.sql("DROP TABLE IF EXISTS departureDelaysWindow")
-    spark.sql("CREATE TABLE departureDelaysWindow AS SELECT origin, destination, SUM(delay) as TotalDelays FROM departureDelays WHERE origin IN ('SEA', 'SFP', 'JFK) AND destination IN ('SEA', 'SFO', 'JFK', 'DEN', 'ORD', 'LAX', 'ALT') GROUP BY origin, destination")
+    // Windowing // Done on VIEWS becase theres no Hive tu support TABLE creation
+    spark.sql("DROP VIEW IF EXISTS departureDelaysWindow")
+    spark.sql("CREATE TEMPORARY VIEW departureDelaysWindow AS SELECT origin, destination, SUM(delay) as TotalDelays FROM departureDelays WHERE origin IN ('SEA', 'SFO', 'JFK') AND destination IN ('SEA', 'SFO', 'JFK', 'DEN', 'ORD', 'LAX', 'ALT') GROUP BY origin, destination")
 
-    spark.sql("SELECT * FROM departureDelaysWindow")
+    spark.sql("SELECT * FROM departureDelaysWindow").show()
+
+    spark.sql("SELECT origin, destination, SUM(TotalDelays) FROM departureDelaysWindow WHERE origin = 'JFK' GROUP BY origin, destination ORDER BY SUM(TotalDelays) DESC LIMIT 3").show()
+
+    spark.sql("SELECT origin, destination, TotalDelays, rank FROM (SELECT origin, destination, TotalDelays, dense_rank() OVER (PARTITION BY origin ORDER BY TotalDelays DESC) AS rank FROM departureDelaysWindow) t WHERE rank <= 3").show()
+
+    foo.show()
+
+    // Adding columns
+    val foo2 = foo.withColumn(
+      "status", expr("CASE WHEN delay <= 10 THEN 'On-Time' ELSE 'Delayed' END")
+    )
+    foo2.show()
+
+    // Dropping columns
+    val foo3 = foo.drop("delay")
+    foo3.show()
+
+    // Renaming columns
+    val foo4 = foo3.withColumnRenamed("status", "flgiht_status")
+    foo4.show()
+
+    // Pivoting
+    spark.sql("SELECT destination, CAST(SUBSTRING(date, 0, 2) AS int) AS month, delay FROM departureDelays WHERE origin = 'SEA'").show()
+    // Pivoting allows you to place names in the month column instead of numbers as well as perform aggregate calculations on the delays by destination and month
+    spark.sql("SELECT * FROM (SELECT destination, CAST(SUBSTRING(date, 0, 2) AS int) AS month, delay FROM departureDelays WHERE origin = 'SEA') " +
+      "PIVOT (CAST(AVG(delay) AS DECIMAL(4, 2)) AS AvgDelay, MAX(delay) AS MaxDelay FOR month IN (1 JAN, 2 FEB)) ORDER BY destination").show()
+
 
   }
 
