@@ -1,4 +1,4 @@
-package org.example.commonlyUsedSharedFolder.sparkSessionFactory.caseClasses
+package org.example.commonlyUsedSharedFolder.caseClasses
 
 case class DeviceIoTData(device_id: Long, device_name: String, ip:
 String, cca2: String, cca3: String, cn: String, latitude:

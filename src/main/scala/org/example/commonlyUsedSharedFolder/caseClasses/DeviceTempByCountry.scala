@@ -1,3 +1,3 @@
-package org.example.commonlyUsedSharedFolder.sparkSessionFactory.caseClasses
+package org.example.commonlyUsedSharedFolder.caseClasses
 
 case class DeviceTempByCountry(temp: Long, device_name: String, device_id: Long, cca3: String)
