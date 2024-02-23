@@ -1,12 +1,11 @@
 package org.example
 
-
-import org.example.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
-import org.example.chapter2.Ej1_MnMs
-import org.example.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
-import org.example.chapter5.{Ej1_UserDefinedFunctions, Ej2_PostgreSQL, Ej3_MySQL, Ej5_MySQLServer, Ej6_CommonDFandSparkSQLOperations}
-import org.example.chapter6.{Ej1_ScalaCaseClase, Ej2_CreatingSampleData}
-import org.example.chapter7.Ej1_SparkConfigModifications
+import org.example.theoryExamples.chapter2.Ej1_MnMs
+import org.example.theoryExamples.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
+import org.example.theoryExamples.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
+import org.example.theoryExamples.chapter5.{Ej1_UserDefinedFunctions, Ej2_PostgreSQL, Ej3_MySQL, Ej5_MySQLServer, Ej6_CommonDFandSparkSQLOperations}
+import org.example.theoryExamples.chapter6.{Ej1_ScalaCaseClase, Ej2_CreatingSampleData}
+import org.example.theoryExamples.chapter7.Ej1_SparkConfigModifications
 
 object Main {
   def main(args:Array[String]): Unit = {
