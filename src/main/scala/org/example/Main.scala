@@ -6,6 +6,7 @@ import org.example.chapter2.Ej1_MnMs
 import org.example.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
 import org.example.chapter5.{Ej1_UserDefinedFunctions, Ej2_PostgreSQL, Ej3_MySQL, Ej5_MySQLServer, Ej6_CommonDFandSparkSQLOperations}
 import org.example.chapter6.{Ej1_ScalaCaseClase, Ej2_CreatingSampleData}
+import org.example.chapter7.Ej1_SparkConfigModifications
 
 object Main {
   def main(args:Array[String]): Unit = {
@@ -89,8 +90,13 @@ object Main {
       Ej1_ScalaCaseClase.run(bloggers)
      */
 
-    // Chapter6 Creating Sample Data execution code
-    Ej2_CreatingSampleData.run()
+    /*
+      // Chapter6 Creating Sample Data execution code
+      Ej2_CreatingSampleData.run()
+     */
+
+    // Chapter7 Spark Configuration Modification execution code
+    Ej1_SparkConfigModifications.run("SparkConfig")
 
 
   }
