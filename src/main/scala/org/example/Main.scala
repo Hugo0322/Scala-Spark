@@ -1,5 +1,6 @@
 package org.example
 
+import org.example.exercices.Ej1_CreatingTablesOnTextFormat
 import org.example.theoryExamples.chapter2.Ej1_MnMs
 import org.example.theoryExamples.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
 import org.example.theoryExamples.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
@@ -94,9 +95,13 @@ object Main {
       Ej2_CreatingSampleData.run()
      */
 
-    // Chapter7 Spark Configuration Modification execution code
-    Ej1_SparkConfigModifications.run("SparkConfig")
+    /*
+      // Chapter7 Spark Configuration Modification execution code
+      Ej1_SparkConfigModifications.run("SparkConfig")
+     */
 
+    val exercicesEj1_path = "src/main/resources/in/estadisticas202402.csv"
+    Ej1_CreatingTablesOnTextFormat.run(exercicesEj1_path)
 
   }
 }

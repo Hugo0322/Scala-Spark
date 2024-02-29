@@ -14,7 +14,6 @@ object Ej2_CreatingSampleData {
 
     import spark.implicits._
 
-
     // Our case class for the DataSet
     val r = new Random(42)
     // Creating 1000 instances of scala Usage class

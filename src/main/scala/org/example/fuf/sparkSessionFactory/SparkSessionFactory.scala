@@ -9,7 +9,7 @@ object SparkSessionFactory {
       .builder()
       .appName(appName)
       .master("local")
-      //.enableHiveSupport()
+      .enableHiveSupport()
       //.config("spark.sql.catalogImplementation","hive")
       .config("spark.executor.memory", "2g")
       .config("spark.executor.instances", "4")
