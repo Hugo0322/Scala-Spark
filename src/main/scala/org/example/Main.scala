@@ -100,8 +100,10 @@ object Main {
       Ej1_SparkConfigModifications.run("SparkConfig")
      */
 
-    val exercicesEj1_path = "src/main/resources/in/estadisticas202402.csv"
-    Ej1_CreatingTablesOnTextFormat.run(exercicesEj1_path)
+    /*
+      val exercicesEj1_path = "src/main/resources/in/estadisticas202402.csv"
+      Ej1_CreatingTablesOnTextFormat.run(exercicesEj1_path)
+    */
 
   }
 }
