@@ -24,14 +24,14 @@ object Ej2_WebServerLogsAnalysis {
 
     // TODO LO IMPRESCINDIBLE PARA SEGUIR CON EL EJERCICIO ESTÁ COMENTADO PARA AHORRAR TIEMPO DE EJECUCIÓN
 
-    // val rawAugLogData = spark.read.text(aug)
-    // val rawJulLogData = spark.read.text(jul)
-    // rawAugLogData.show()
-    // rawJulLogData.show()
+     val rawAugLogData = spark.read.text(aug)
+     val rawJulLogData = spark.read.text(jul)
+     rawAugLogData.show()
+     rawJulLogData.show()
 
     // Convierto una única columna value en 6 distintas con todos los campos que me interesan
 
-    /*
+
     val augLogData = rawAugLogData.select(
       functions.split(col("value"), " ")(0).alias("Host"),
       substring(regexp_replace(functions.split(col("value"), " ")(3), "Aug", "08"), 2, 20).alias("Date"),
@@ -41,10 +41,10 @@ object Ej2_WebServerLogsAnalysis {
       functions.split(col("value"), " ")(8).alias("HTTP-Status"),
       functions.split(col("value"), " ")(9).alias("Size").cast(IntegerType)
     )
-     */
+
     // augLogData.show()
 
-    /*
+
     val julLogData = rawJulLogData.select(
       functions.split(col("value"), " ")(0).alias("Host"),
       substring(regexp_replace(functions.split(col("value"), " ")(3), "Jul", "07"), 2, 20).alias("Date"),
@@ -54,12 +54,12 @@ object Ej2_WebServerLogsAnalysis {
       functions.split(col("value"), " ")(8).alias("HTTP-Status"),
       functions.split(col("value"), " ")(9).alias("Size").cast(IntegerType),
     )
-     */
+
     // julLogData.show()
 
     // Ahora los guardo en formato parquet para cargarlos luego en mis dataFrames "base"
 
-    /*
+
     val augLogDataCoalesce = augLogData.coalesce(1)
     augLogDataCoalesce.write.mode("overwrite").parquet("src/main/resources/out/exercises.ej2/aug")
     println(augLogDataCoalesce.rdd.getNumPartitions)
@@ -68,13 +68,13 @@ object Ej2_WebServerLogsAnalysis {
     julLogDataCoalesce.write.mode("overwrite").parquet("src/main/resources/out/exercises.ej2/jul")
     println(julLogDataCoalesce.rdd.getNumPartitions)
     println(julLogData.rdd.getNumPartitions)
-     */
 
-    // val rawParquetAugLogs = spark.read.schema(schema).parquet("src/main/resources/out/exercises.ej2/aug")
-    // val rawParquetJulLogs = spark.read.schema(schema).parquet("src/main/resources/out/exercises.ej2/jul")
 
-    // val joined = rawParquetAugLogs.coalesce(1).union(rawParquetJulLogs).coalesce(1)
-    // joined.write.mode("overwrite").parquet("src/main/resources/out/exercises.ej2/union")
+     val rawParquetAugLogs = spark.read.schema(schema).parquet("src/main/resources/out/exercises.ej2/aug")
+     val rawParquetJulLogs = spark.read.schema(schema).parquet("src/main/resources/out/exercises.ej2/jul")
+
+     val joined = rawParquetAugLogs.coalesce(1).union(rawParquetJulLogs).coalesce(1)
+     joined.write.mode("overwrite").parquet("src/main/resources/out/exercises.ej2/union")
 
 
     val rawParquetLogs = spark.read.schema(schema).parquet("src/main/resources/out/exercises.ej2/union")

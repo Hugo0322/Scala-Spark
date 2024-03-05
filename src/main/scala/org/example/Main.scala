@@ -1,6 +1,6 @@
 package org.example
 
-import org.example.exercices.Ej1_CreatingTablesOnTextFormat
+import org.example.exercices.{Ej1_CreatingTablesOnTextFormat, Ej2_WebServerLogsAnalysis}
 import org.example.theoryExamples.chapter2.Ej1_MnMs
 import org.example.theoryExamples.chapter3.{Ej1_DefiningSchema, Ej2_FireCalls_CommonDataFrameOperations, Ej3_DataSet_API}
 import org.example.theoryExamples.chapter4.{Ej1_BasicSQLQueryExamples, Ej2_CreatingSQLDatabasesAndTables, Ej3_DataFrameReader, Ej4_Images}
@@ -104,6 +104,11 @@ object Main {
       val exercicesEj1_path = "src/main/resources/in/estadisticas202402.csv"
       Ej1_CreatingTablesOnTextFormat.run(exercicesEj1_path)
     */
+
+    val exercicesEj2_Aug = "src/main/resources/in/access_log_Aug95"
+    val exercicesEj2_Jul = "src/main/resources/in/access_log_Jul95"
+    Ej2_WebServerLogsAnalysis.run(exercicesEj2_Aug, exercicesEj2_Jul)
+
 
   }
 }
